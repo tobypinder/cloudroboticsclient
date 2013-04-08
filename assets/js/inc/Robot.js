@@ -59,10 +59,47 @@ var Robot={
         ctx.translate(-Robot.x, -Robot.y);
         
         //TODO: Remove
-        this.rot= this.rot + (0.4/360 * 2*Math.PI)
+        //this.rot= this.rot + (0.4/360 * 2*Math.PI)
+        this.stepRight(0.3);
+        var randDir=Math.random()-0.5;
+        
+        if(randDir>0) {
+            this.stepLeft(1);
+        } else {
+            this.stepRight(1);
+        }
+        
+        if(Loop.frameNumber % 60 == 0)
+        {
+            this.addSensedLeft(10);
+        }
+        
         //this.y= this.y-0.3
     },
-    drawFOV:function(ctx)
+    stepLeft:function(mag)
+    {
+        this.rot=this.rot + (Config.ROBOT_ENCODER_STEP_RADIANS * mag);
+        this.y = this.y - ( Math.cos(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
+        this.x = this.x + ( Math.sin(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
+        //console.log("[x:"+(Math.round(this.x*10)/10)+", y:"+(Math.round(this.y*10)/10)+"] @"+Math.round(this.rot*10)/10);
+    },
+    stepRight:function(mag)
+    {
+        this.rot=this.rot - (Config.ROBOT_ENCODER_STEP_RADIANS * mag);
+        this.y = this.y - ( Math.cos(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
+        this.x = this.x + ( Math.sin(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
+        //console.log("[x:"+Math.round(this.x*10)/10+", y:"+Math.round(this.y*10)/10+"] @"+this.rot);
+    },
+    addSensedLeft:function(distance)
+    {
+        //add angular offset from centre of robot
+        //add additional angular offset on the line of the sensor.
+        var offsetX=this.x
+        var offsetY=this.y
+        
+        Particles.add(offsetX,offsetY);
+    },
+    addSensedRight:function(distance)
     {
         
     }

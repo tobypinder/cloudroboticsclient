@@ -45,7 +45,7 @@
               
             </ul>
             <ul class="nav pull-right">
-                <li><a name="connectedCount">0 Robots connected.</a></li>
+                <li><a name="connectedCount">n Robots connected.</a></li>
             </ul>    
           </div><!--/.nav-collapse -->
         </div>
@@ -107,6 +107,7 @@
     <script src="/assets/js/inc/Event.js"></script>
     <script src="/assets/js/inc/Kicker.js"></script>
     <script src="/assets/js/inc/Loop.js"></script>  
+    <script src="/assets/js/inc/Particle.js"></script>
     <script src="/assets/js/inc/Robot.js"></script>    
 
   </body>
