@@ -1,6 +1,6 @@
 var Ajax={
     init:function(){
-        setInterval(function(){Ajax.load()},(Config.AJAX_SECONDS*100))
+        setInterval(function(){Ajax.load()},(Config.AJAX_SECONDS*1000))
     },
     getURL:function(){
         
@@ -14,11 +14,22 @@ var Ajax={
         $.ajax({
             url: this.getURL(), 
             type: 'csv',
-            success: 'Ajax.process',
+            success: function(data){Ajax.process(data)},
             method: 'get'
-        })
+        });
     },
     process:function(data){
-        console.log(data);
+        var rows=data.split("\n");
+        rows.splice(0,1);
+        
+        var rowcount=rows.length;
+
+        for(var i=0;i<rowcount;i++)
+        {
+            rows[i]=rows[i].split(',');
+        }
+        
+        console.log(rows);
+        
     }
 }

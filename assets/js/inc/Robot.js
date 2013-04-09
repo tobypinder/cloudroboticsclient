@@ -72,11 +72,11 @@ var Robot={
         
         if(Loop.frameNumber % 60 === 0)
         {
-            this.addSensedLeft(Math.random()*20+20);
+            this.addSensedLeft(Math.random()*20+5);
         }
         if(Loop.frameNumber % 60 === 30)
         {
-            this.addSensedRight(Math.random()*20+20);
+            this.addSensedRight(Math.random()*20+5);
         }
         
         //this.y= this.y-0.3
