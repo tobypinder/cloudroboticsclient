@@ -60,7 +60,7 @@ var Robot={
         
         //TODO: Remove
         //this.rot= this.rot + (0.4/360 * 2*Math.PI)
-        this.stepRight(0.3);
+        this.stepRight(0.2);
         var randDir=Math.random()-0.5;
         
         if(randDir>0) {
@@ -68,10 +68,15 @@ var Robot={
         } else {
             this.stepRight(1);
         }
+        //this.rot= this.rot + (0.3/360 * 2*Math.PI)
         
-        if(Loop.frameNumber % 60 == 0)
+        if(Loop.frameNumber % 60 === 0)
         {
-            this.addSensedLeft(10);
+            this.addSensedLeft(Math.random()*20+20);
+        }
+        if(Loop.frameNumber % 60 === 30)
+        {
+            this.addSensedRight(Math.random()*20+20);
         }
         
         //this.y= this.y-0.3
@@ -79,28 +84,36 @@ var Robot={
     stepLeft:function(mag)
     {
         this.rot=this.rot + (Config.ROBOT_ENCODER_STEP_RADIANS * mag);
-        this.y = this.y - ( Math.cos(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
         this.x = this.x + ( Math.sin(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
-        //console.log("[x:"+(Math.round(this.x*10)/10)+", y:"+(Math.round(this.y*10)/10)+"] @"+Math.round(this.rot*10)/10);
+        this.y = this.y - ( Math.cos(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
     },
     stepRight:function(mag)
     {
         this.rot=this.rot - (Config.ROBOT_ENCODER_STEP_RADIANS * mag);
-        this.y = this.y - ( Math.cos(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
+        
         this.x = this.x + ( Math.sin(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
-        //console.log("[x:"+Math.round(this.x*10)/10+", y:"+Math.round(this.y*10)/10+"] @"+this.rot);
+        this.y = this.y - ( Math.cos(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
     },
     addSensedLeft:function(distance)
     {
-        //add angular offset from centre of robot
-        //add additional angular offset on the line of the sensor.
-        var offsetX=this.x
-        var offsetY=this.y
+        this.addSensed(distance, Config.ROBOT_SENSOR_L_CENTEROFFSET_X,Config.ROBOT_SENSOR_L_CENTEROFFSET_Y,Config.ROBOT_SENSOR_L_ANGLE)
         
-        Particles.add(offsetX,offsetY);
     },
     addSensedRight:function(distance)
     {
+        this.addSensed(distance, Config.ROBOT_SENSOR_R_CENTEROFFSET_X,Config.ROBOT_SENSOR_R_CENTEROFFSET_Y,Config.ROBOT_SENSOR_R_ANGLE)
+    },
+    addSensed:function(distance, centreoffset_x, centreoffset_y, sensor_angle)
+    {
+        var offsetX=centreoffset_x*Math.cos(this.rot)+centreoffset_y*-Math.sin(this.rot);//this.x
+        var offsetY=centreoffset_x*Math.sin(this.rot)+centreoffset_y*+Math.cos(this.rot);//this.y
         
+        offsetX+=(distance * Math.sin(this.rot+sensor_angle));
+        offsetY+=(distance * -Math.cos(this.rot+sensor_angle));
+        
+        offsetX+=this.x;
+        offsetY+=this.y;
+        
+        Particles.add(offsetX,offsetY);
     }
-}
+};

@@ -8,14 +8,14 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
     
-    <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/assets/css/darkstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/darkstrap.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
+      <script src="assets/js/html5shiv.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
@@ -98,17 +98,19 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
 
     <!-- Libs. Keep in order with folder. -->
-    <script src="/assets/js/inc/Canvas.js"></script>    
-    <script src="/assets/js/inc/Config.js"></script>
-    <script src="/assets/js/inc/Event.js"></script>
-    <script src="/assets/js/inc/Kicker.js"></script>
-    <script src="/assets/js/inc/Loop.js"></script>  
-    <script src="/assets/js/inc/Particle.js"></script>
-    <script src="/assets/js/inc/Robot.js"></script>    
+    <script src="assets/js/inc/ActionQueue.js"></script>  
+    <script src="assets/js/inc/Ajax.js"></script>  
+    <script src="assets/js/inc/Canvas.js"></script>    
+    <script src="assets/js/inc/Config.js"></script>
+    <script src="assets/js/inc/Event.js"></script>
+    <script src="assets/js/inc/Kicker.js"></script>
+    <script src="assets/js/inc/Loop.js"></script>  
+    <script src="assets/js/inc/Particle.js"></script>
+    <script src="assets/js/inc/Robot.js"></script>    
 
   </body>
 </html>
