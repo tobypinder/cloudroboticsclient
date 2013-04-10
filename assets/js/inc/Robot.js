@@ -4,6 +4,10 @@ var Robot={
     width:null,
     height:null,
     rot:null,
+    lastActionTime:null, //action
+    lastQueuedTime:null,
+    internalTime:null, //for display.
+    lastState:null,     //TYPE: RobotState
     init:function(){
         this.x=0;
         this.y=0;
@@ -60,26 +64,45 @@ var Robot={
         
         //TODO: Remove
         //this.rot= this.rot + (0.4/360 * 2*Math.PI)
-        this.stepRight(0.2);
-        var randDir=Math.random()-0.5;
-        
-        if(randDir>0) {
-            this.stepLeft(1);
-        } else {
-            this.stepRight(1);
-        }
+//        this.stepRight(0.2);
+//        var randDir=Math.random()-0.5;
+//        
+//        if(randDir>0) {
+//            this.stepLeft(1);
+//        } else {
+//            this.stepRight(1);
+//        }
         //this.rot= this.rot + (0.3/360 * 2*Math.PI)
-        
-        if(Loop.frameNumber % 60 === 0)
-        {
-            this.addSensedLeft(Math.random()*20+5);
-        }
-        if(Loop.frameNumber % 60 === 30)
-        {
-            this.addSensedRight(Math.random()*20+5);
-        }
-        
+//        
+//        if(Loop.frameNumber % 60 === 0)
+//        {
+//            this.addSensedLeft(Math.random()*20+5);
+//        }
+//        if(Loop.frameNumber % 60 === 30)
+//        {
+//            this.addSensedRight(Math.random()*20+5);
+//        }
+//        
         //this.y= this.y-0.3
+    },
+    moveToState:function(state)
+    {
+        if(state.wheelLeft)
+        {
+            this.stepLeft(state.wheelLeft-this.lastState.wheelLeft);
+        }
+        if(state.wheelRight)
+        {
+            this.stepRight(state.wheelRight-this.lastState.wheelRight);
+        }
+        if(state.sensorLeft && (state.sensorLeft <= Config.ROBOT_SENSOR_L_MAXRANGE))
+        {
+            this.addSensedLeft(state.sensorLeft);
+        }
+        if(state.sensorRight && (state.sensorRight <= Config.ROBOT_SENSOR_R_MAXRANGE))
+        {
+            this.addSensedRight(state.sensorRight);
+        }
     },
     stepLeft:function(mag)
     {

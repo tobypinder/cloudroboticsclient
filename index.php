@@ -111,6 +111,6 @@
     <script src="assets/js/inc/Loop.js"></script>  
     <script src="assets/js/inc/Particle.js"></script>
     <script src="assets/js/inc/Robot.js"></script>    
-
+    <script src="assets/js/inc/RobotState.js"></script>    
   </body>
 </html>

@@ -17,8 +17,14 @@ var Loop=
         Loop.frameNumber++;
         
         //Do stuff.
+        ActionQueue.pump();
         Canvas.redraw();
         
+        if(ActionQueue.list.length>0)
+        {
+            ActionQueue.list[0].robotState.interpolateTo();
+        }
+        Robot.internalTime+=(((Loop.thisFrame - Loop.lastFrame)/1000))*Config.DEBUG_PLAYBACK_SPEED
         Loop.lastFrame = Loop.thisFrame;
     }
 }
