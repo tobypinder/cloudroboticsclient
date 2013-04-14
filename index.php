@@ -66,17 +66,17 @@
       <div class="row">
         <div class="span4">
             <div class="well">
-                <iframe width='240' height='150' style='border: 0px solid #333;margin:0 auto;' src='http://bots.myrobots.com/channels/943/charts/2?title=Left+Sensor+Proximity&yaxis=&xaxis=&width=250&height=160&bgcolor=222222&dynamic=true&key=D9269081CF6E4EE3&results=20' scrolling='no'></iframe>
+                <iframe id="g2" width='240' height='150' style='border: 0px solid #333;margin:0 auto;' src='http://bots.myrobots.com/channels/943/charts/2?title=Left+Sensor+Proximity&yaxis=&xaxis=&width=250&height=160&bgcolor=222222&dynamic=true&key=D9269081CF6E4EE3&results=20' scrolling='no'></iframe>
             </div>
         </div>
        <div class="span4">
           <div class="well">
-            <iframe width='240' height='150' style='border: 0px solid #333;margin:0 auto;' src='http://bots.myrobots.com/channels/943/charts/5?title=Right+Sensor+Proximity&yaxis=&xaxis=&width=250&height=160&bgcolor=222222&dynamic=true&key=D9269081CF6E4EE3&results=20' scrolling='no'></iframe>
+            <iframe id="g5" width='240' height='150' style='border: 0px solid #333;margin:0 auto;' src='http://bots.myrobots.com/channels/943/charts/5?title=Right+Sensor+Proximity&yaxis=&xaxis=&width=250&height=160&bgcolor=222222&dynamic=true&key=D9269081CF6E4EE3&results=20' scrolling='no'></iframe>
           </div>
        </div>
        <div class="span4">
          <div class="well">
-           <iframe width='240' height='150' style='border: 0px solid #333;margin:0 auto;' src='http://bots.myrobots.com/channels/943/charts/7?title=Front+Ultrasonic&yaxis=&xaxis=&width=250&height=160&bgcolor=222222&dynamic=true&key=D9269081CF6E4EE3&results=20' scrolling='no'></iframe>
+           <iframe id="g7" width='240' height='150' style='border: 0px solid #333;margin:0 auto;' src='http://bots.myrobots.com/channels/943/charts/7?title=Front+Ultrasonic&yaxis=&xaxis=&width=250&height=160&bgcolor=222222&dynamic=true&key=D9269081CF6E4EE3&results=20' scrolling='no'></iframe>
          </div>
        </div>
       </div>

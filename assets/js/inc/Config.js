@@ -16,7 +16,7 @@ var Config=
     WINDOW_HEIGHT:                                  600,
     ROBOT_WIDTH:                                    37.0,
     ROBOT_HEIGHT:                                   20,
-    WORLD_SCALE:                                    1.8, //1 cm = n px
+    WORLD_SCALE:                                    2, //1 cm = n px
     ROBOT_SENSOR_L_CENTEROFFSET_X:                  -17.7,
     ROBOT_SENSOR_R_CENTEROFFSET_X:                  17.7,    
     ROBOT_SENSOR_L_CENTEROFFSET_Y:                  -8.9,
