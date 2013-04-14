@@ -14,26 +14,31 @@ var MyRobots= {
      * we won't do it this way in any real info, but given the time constraints of this
      * hackathon we're going to have to rely on trust. Please be nice :)
      */
-    API_KEY:            "D9269081CF6E4EE3",
-    ENDPOINT_URL:       "http://bots.myrobots.com",
-    PATH_UPDATE:        "/update",
+    API_KEY:                        "D9269081CF6E4EE3",
+    ENDPOINT_URL:                   "http://bots.myrobots.com",
+    PATH_UPDATE:                    "/update",
+    PATH_UPDATE_JSONP_CALLBACK:     "MyRobots.processUpdate",
     init:function()
     {
         setInterval( function(){MyRobots.sendUpdate(Robot.lastState)}, Config.MYROBOTS_SECONDS*1000);
     },  
     getURL:function(currentState)
     {
-        return this.ENDPOINT_URL+"?key="+this.API_KEY+"&field7="+currentState.sensorUV
+        return this.ENDPOINT_URL+this.PATH_UPDATE+"?key="+this.API_KEY+"&field2="+currentState.sensorLeft+"&field5="+currentState.sensorRight+"&field7="+currentState.sensorUV+"&callback="+this.PATH_UPDATE_JSONP_CALLBACK
     },
     sendUpdate:function(currentState)
     {
         console.log("Sending MyRobots Updates...");
         $.ajax({
             url: this.getURL(currentState), 
-            type: 'csv',
+            dataType: "jsonp", //bypass Same-Origin nonsense.
             success: function(data){MyRobots.onUpdate(data)},
             method: 'get'
         });
+    },
+    processUpdate:function(data)
+    {
+        alert("Processed!"+data);
     },
     onUpdate:function()
     {

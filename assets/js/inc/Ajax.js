@@ -8,8 +8,8 @@ var Ajax={
         var base     = 'http://staging.sevtelem.com/robot.php';
         var roboFrom = Math.round(new Date().getTime()/1000);
         var roboDuration = 90;
-//        return (base+"?roboFrom="+roboFrom+"&roboDuration="+roboDuration);
-        return 'SAMPLE.csv'; 
+        return (base+"?roboFrom="+roboFrom+"&roboDuration="+roboDuration);
+//        return 'SAMPLE.csv'; 
     },
     load:function()
     {   
