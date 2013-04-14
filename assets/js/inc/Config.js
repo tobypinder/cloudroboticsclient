@@ -1,7 +1,7 @@
 var Config=
 {
     AJAX_SECONDS:                                   15,
-    AJAX_DURATION:                                  120,        
+    AJAX_DURATION:                                  90,        
     AJAX_INDEX_TIMESTAMP:                           0,        
     AJAX_INDEX_SENSOR_LEFT:                         1,
     AJAX_INDEX_SENSOR_RIGHT:                        2,
@@ -16,7 +16,7 @@ var Config=
     WINDOW_HEIGHT:                                  600,
     ROBOT_WIDTH:                                    37.0,
     ROBOT_HEIGHT:                                   20,
-    WORLD_SCALE:                                    2, //1 cm = n px
+    WORLD_SCALE:                                    1.8, //1 cm = n px
     ROBOT_SENSOR_L_CENTEROFFSET_X:                  -17.7,
     ROBOT_SENSOR_R_CENTEROFFSET_X:                  17.7,    
     ROBOT_SENSOR_L_CENTEROFFSET_Y:                  -8.9,

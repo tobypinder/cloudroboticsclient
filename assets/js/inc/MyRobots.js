@@ -38,7 +38,7 @@ var MyRobots= {
     },
     processUpdate:function(data)
     {
-        alert("Processed!"+data);
+        //alert("Processed!"+data);
     },
     onUpdate:function()
     {
