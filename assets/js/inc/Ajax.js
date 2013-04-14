@@ -1,18 +1,36 @@
 var Ajax={
+    today:null,
     init:function(){
         setInterval(function(){Ajax.load()},(Config.AJAX_SECONDS*1000))
         this.load();
+        var now=new Date();
+        Ajax.today=(new Date(now.getFullYear(), now.getMonth(), now.getDate()))/1000;
+        
     },
     getURL:function(){
         
         var base     = 'http://staging.sevtelem.com/robot.php';
-        var roboFrom = Math.round(new Date().getTime()/1000);
         var roboDuration = Config.AJAX_DURATION;
-        return (base+"?roboFrom="+roboFrom+"&roboDuration="+roboDuration);
+        
+        
+        if(Robot.lastActionTime == null) {
+            console.log("Last: "+Robot.lastActionTime+"\tToday: "+Ajax.today+"\tTotal: "+(Robot.lastActionTime+Ajax.today*1000))
+            return (base+"?roboDuration="+roboDuration);
+            
+            
+        } else{
+            console.log("No prior actions.")
+            var roboFrom = Math.round(Robot.lastActionTime)+Ajax.today;
+            return (base+"?roboFrom="+roboFrom+"&roboDuration="+roboDuration);
+        }
+        
+        
+        
 //        return 'SAMPLE.csv'; 
     },
     load:function()
     {   
+        console.log("Loading new telemetry from "+this.getURL());
         $.ajax({
             url: this.getURL(), 
             type: 'csv',
