@@ -83,6 +83,8 @@ var Robot={
     },
     stepLeft:function(mag)
     {
+        console.log("LEFT: "+Config.ROBOT_ENCODER_STEP_RADIANS);
+        console.log("MAG:  "+mag);
         this.rot=this.rot + (Config.ROBOT_ENCODER_STEP_RADIANS * mag);
         this.x = this.x + ( Math.sin(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
         this.y = this.y - ( Math.cos(this.rot) * Config.ROBOT_ENCODER_STEP_CM * mag)
