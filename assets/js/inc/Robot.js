@@ -4,10 +4,10 @@ var Robot={
     width:null,
     height:null,
     rot:null,
-    lastActionTime:null, //action
-    lastQueuedTime:null,
-    internalTime:null, //for display.
-    lastState:null,     //TYPE: RobotState
+    lastActionTime:null,    //last action actually processed
+    lastQueuedTime:null,    //latest queued items
+    internalTime:null,      //for display.
+    lastState:null,         //TYPE: RobotState
     init:function(){
         this.x=0;
         this.y=0;

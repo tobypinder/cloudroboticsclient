@@ -5,5 +5,6 @@ var Event={
         Robot.init(); //set up a default bot.
         Loop.init();
         Ajax.init();
+        MyRobots.init();
     }
 }

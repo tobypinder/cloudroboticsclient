@@ -13,7 +13,7 @@ var Loop=
     step:function()
     {
         Loop.thisFrame = new Date().getTime();
-        Loop.currentFPS = 1000/(Loop.thisFrame-Loop.lastFrame)
+        Loop.currentFPS = 1000 / (Loop.thisFrame-Loop.lastFrame)
         Loop.frameNumber++;
         
         //Do stuff.
@@ -24,7 +24,7 @@ var Loop=
         {
             ActionQueue.list[0].robotState.interpolateTo();
         }
-        Robot.internalTime+=(((Loop.thisFrame - Loop.lastFrame)/1000))*Config.DEBUG_PLAYBACK_SPEED
+        Robot.internalTime+= (((Loop.thisFrame - Loop.lastFrame)/1000)) * Config.DEBUG_PLAYBACK_SPEED
         Loop.lastFrame = Loop.thisFrame;
     }
 }

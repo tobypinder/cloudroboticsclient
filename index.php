@@ -108,7 +108,8 @@
     <script src="assets/js/inc/Config.js"></script>
     <script src="assets/js/inc/Event.js"></script>
     <script src="assets/js/inc/Kicker.js"></script>
-    <script src="assets/js/inc/Loop.js"></script>  
+    <script src="assets/js/inc/Loop.js"></script>
+    <script src="assets/js/inc/MyRobots.js"></script>    
     <script src="assets/js/inc/Particle.js"></script>
     <script src="assets/js/inc/Robot.js"></script>    
     <script src="assets/js/inc/RobotState.js"></script>    

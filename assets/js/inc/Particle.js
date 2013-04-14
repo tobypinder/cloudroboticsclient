@@ -5,8 +5,7 @@ function Particle(x,y){
     this.expiry=this.start+Config.WALL_PARTICLE_EXPIRY,
     this.draw=function(ctx,now)
     {
-        
-        ctx.fillStyle = "rgba(0,255,0,"+(1-((now-this.start)/(this.expiry-this.start)))+")";
+        ctx.fillStyle = "rgba(0,255,0,"+Math.pow((1-((now-this.start)/(this.expiry-this.start))),2)+")";
         ctx.lineWidth = Config.WALL_PARTICLE_DISPLAY_WIDTH;
         
         ctx.beginPath();
@@ -26,7 +25,8 @@ var Particles={
     {
         var idx = this.list.length
         var now=new Date().getTime();
-        while (idx--) {
+        while (idx--) 
+        {
             var part=this.list[idx];
            
             if(part.expiry<now)
