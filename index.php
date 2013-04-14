@@ -45,7 +45,7 @@
               
             </ul>
             <ul class="nav pull-right">
-                <li><a name="connectedCount">n Robots connected.</a></li>
+                <li><a name="connectedCount">1 Robots connected.</a></li>
             </ul>    
           </div><!--/.nav-collapse -->
         </div>

@@ -22,11 +22,11 @@ var Config=
     ROBOT_SENSOR_L_CENTEROFFSET_Y:                  -8.9,
     ROBOT_SENSOR_R_CENTEROFFSET_Y:                  -8.9,
     ROBOT_RADIUS:                                   17.7,
-    ROBOT_SENSOR_L_MAXRANGE:                        25,
-    ROBOT_SENSOR_R_MAXRANGE:                        25,
+    ROBOT_SENSOR_L_MAXRANGE:                        22,
+    ROBOT_SENSOR_R_MAXRANGE:                        22,
     ROBOT_SENSOR_L_ANGLE:                           -(0.25*Math.PI), //45 deg
     ROBOT_SENSOR_R_ANGLE:                           (0.25*Math.PI),  //45 deg
-    ROBOT_ENCODER_SENSITIVITY:128,
+    ROBOT_ENCODER_SENSITIVITY:                      128,
     ROBOT_ENCODER_CIRCUMFERENCE:                    (4.5*Math.PI),
     ROBOT_ENCODER_STEP_CM:                          null,
     ROBOT_ENCODER_STEP_DEGREES:                     null,
