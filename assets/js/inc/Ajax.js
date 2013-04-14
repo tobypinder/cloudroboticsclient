@@ -48,11 +48,11 @@ var Ajax={
             rows[i][0] = time;
             var state = new RobotState({
                 time:           time,
-                sensorLeft:     rows[i][Config.AJAX_INDEX_SENSOR_LEFT],
-                sensorRight:    rows[i][Config.AJAX_INDEX_SENSOR_RIGHT],
-                sensorUV:       rows[i][Config.AJAX_INDEX_SENSOR_UV],
-                wheelLeft:      rows[i][Config.AJAX_INDEX_MOTOR_LEFT],
-                wheelRight:     rows[i][Config.AJAX_INDEX_MOTOR_RIGHT]
+                sensorLeft:     parseFloat(rows[i][Config.AJAX_INDEX_SENSOR_LEFT]),
+                sensorRight:    parseFloat(rows[i][Config.AJAX_INDEX_SENSOR_RIGHT]),
+                sensorUV:       parseFloat(rows[i][Config.AJAX_INDEX_SENSOR_UV]),
+                wheelLeft:      parseFloat(rows[i][Config.AJAX_INDEX_MOTOR_LEFT]),
+                wheelRight:     parseFloat(rows[i][Config.AJAX_INDEX_MOTOR_RIGHT])
             });
             
             ActionQueue.add(time,state);

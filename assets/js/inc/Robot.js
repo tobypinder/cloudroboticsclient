@@ -61,29 +61,6 @@ var Robot={
         //END DRAWING
         ctx.rotate(-this.rot);
         ctx.translate(-Robot.x, -Robot.y);
-        
-        //TODO: Remove
-        //this.rot= this.rot + (0.4/360 * 2*Math.PI)
-//        this.stepRight(0.2);
-//        var randDir=Math.random()-0.5;
-//        
-//        if(randDir>0) {
-//            this.stepLeft(1);
-//        } else {
-//            this.stepRight(1);
-//        }
-        //this.rot= this.rot + (0.3/360 * 2*Math.PI)
-//        
-//        if(Loop.frameNumber % 60 === 0)
-//        {
-//            this.addSensedLeft(Math.random()*20+5);
-//        }
-//        if(Loop.frameNumber % 60 === 30)
-//        {
-//            this.addSensedRight(Math.random()*20+5);
-//        }
-//        
-        //this.y= this.y-0.3
     },
     moveToState:function(state)
     {
