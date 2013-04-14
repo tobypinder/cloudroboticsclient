@@ -1,7 +1,7 @@
 var Config=
 {
     AJAX_SECONDS:                                   15,
-            
+    AJAX_DURATION:                                  120,        
     AJAX_INDEX_TIMESTAMP:                           0,        
     AJAX_INDEX_SENSOR_LEFT:                         1,
     AJAX_INDEX_SENSOR_RIGHT:                        2,
