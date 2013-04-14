@@ -12,17 +12,13 @@ var Ajax={
         var base     = 'http://staging.sevtelem.com/robot.php';
         var roboDuration = Config.AJAX_DURATION;
         
-        
-        if(Robot.lastActionTime == null) {
-            console.log("Last: "+Robot.lastActionTime+"\tToday: "+Ajax.today+"\tTotal: "+(Robot.lastActionTime+Ajax.today*1000))
-            return (base+"?roboDuration="+roboDuration);
-            
-            
-        } else{
-            console.log("No prior actions.")
-            var roboFrom = Math.round(Robot.lastActionTime)+Ajax.today;
-            return (base+"?roboFrom="+roboFrom+"&roboDuration="+roboDuration);
-        }
+        console.log("Last: "+Robot.lastActionTime+"\tToday: "+Ajax.today+"\tTotal: "+(Robot.lastActionTime+Ajax.today*1000))
+        //if(Robot.lastActionTime == null) {
+            return (base+"?roboDuration="+roboDuration); 
+       // } else{
+       //     var roboFrom = Math.round(Robot.lastActionTime)+Ajax.today;
+       //     return (base+"?roboFrom="+roboFrom+"&roboDuration="+roboDuration);
+       // }
         
         
         
