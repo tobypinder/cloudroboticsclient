@@ -43,19 +43,8 @@ var Canvas={
         ctx.font = (12*Config.WORLD_SCALE)+"pt Verdana, serif";
         ctx.fillStyle = "#fff";
         ctx.fillText("FPS: "+Math.round(Loop.currentFPS),  (Canvas.WIDTH/2) - (80*Config.WORLD_SCALE),  (Canvas.HEIGHT/2) - (20*Config.WORLD_SCALE) );
-        ctx.fillText("ActionQueue: "+(ActionQueue.list.length) +"  Time: "+this.getTimeAsString(),  -(Canvas.WIDTH/2) + (20*Config.WORLD_SCALE),  (Canvas.HEIGHT/2) - (20*Config.WORLD_SCALE) );
+        ctx.fillText("ActionQueue: "+(ActionQueue.list.length) +"  Time: "+Math.round(Robot.internalTime),  -(Canvas.WIDTH/2) + (20*Config.WORLD_SCALE),  (Canvas.HEIGHT/2) - (20*Config.WORLD_SCALE) );
         Robot.draw(ctx);
         Particles.drawAll(ctx);
-    },
-    getTimeAsString:function()
-    {
-        var t = new Date(Robot.internalTime*1000);
-        
-        var hour = t.getUTCHours();
-        var min =  t.getUTCMinutes();
-        var sec =  t.getUTCSeconds();
-        
-        return hour+':'+min+':'+sec ;
-        
     }
 }

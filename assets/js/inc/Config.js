@@ -1,7 +1,7 @@
 var Config=
 {
     AJAX_SECONDS:                                   15,
-    AJAX_DURATION:                                  90,        
+    AJAX_DURATION:                                  120,        
     AJAX_INDEX_TIMESTAMP:                           0,        
     AJAX_INDEX_SENSOR_LEFT:                         1,
     AJAX_INDEX_SENSOR_RIGHT:                        2,
@@ -29,7 +29,7 @@ var Config=
     ROBOT_ENCODER_SENSITIVITY:                      128,
     ROBOT_ENCODER_CIRCUMFERENCE:                    (4.5*Math.PI),
     ROBOT_ENCODER_STEP_CM:                          null,
-    ROBOT_ENCODER_STEP_DEGREES:                     null,
+    ROBOT_ENCODER_STEP_RADIANS:                     null,
     WALL_PARTICLE_EXPIRY:                           90000, //ms
     WALL_PARTICLE_DISPLAY_WIDTH:                    2,
     DEBUG_PLAYBACK_SPEED:                           1 //TODO: ALWAYS 1!
